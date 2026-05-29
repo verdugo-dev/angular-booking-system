@@ -18,7 +18,14 @@ export class CoursesList implements OnInit {
   constructor(private courseService: CourseService) {}
 
   ngOnInit(): void {
-    this.courses = this.courseService.getCourses();
+    this.courseService.getCourses().subscribe({
+      next: (data) => {
+        this.courses = data;
+      },
+      error: (err) => {
+        console.error('Error fetching courses: ', err);
+      }
+    });
   }
 
   onCourseBooked(course: Course): void {

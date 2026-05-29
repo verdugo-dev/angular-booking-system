@@ -1,6 +1,6 @@
 <div class="course-card">
   <h3>{{course.title}}</h3>
-  <img [ngStyle]="{'border': course?.soldOut ? '2px solid red' : 'none'}" [src]="course.image" [alt]="course.title" width="100">
+  <img [ngStyle]="{'border': course.soldOut ? '2px solid red' : 'none'}" [src]="course.image" [alt]="course.title" width="100">
   <p>{{course.description}}</p>
   <p>{{course.price | currency:'MXN'}}</p>
   <p>{{course.date | date:'longDate'}}</p>
@@ -10,7 +10,7 @@
     <div class="special-offer">Special Offer!</div>
   }
 
-  @if (course?.onSale) {
+  @if (course.onSale) {
     <div class="sale-banner">On Sale!</div>
   }
 

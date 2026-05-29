@@ -11,7 +11,7 @@ import { Course } from '../models/course.model';
 })
 export class CourseCard {
 
-  @Input() course?: Course;
+  @Input() course!: Course;
   @Output() courseBooked = new EventEmitter<Course>();
   @Output() wishlistAdded = new EventEmitter<Course>();
 
