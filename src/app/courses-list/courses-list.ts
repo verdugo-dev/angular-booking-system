@@ -10,6 +10,7 @@ import { CourseCard } from '../course-card/course-card';
 export class CoursesList implements OnInit {
 
   title: string = "Available Courses";
+  wishlist: any[] = [];
   courses = [
     {id: 1, title: 'Intro to Angular', description: "Learn angular in this course.", price: 49, date: "02-01-2025", soldOut: false, image: 'angular-logo.png', onSale: false },
     {id: 2, title: 'Advanced Angular', description: "Take your Angular skills to the next level.", price: 99, date: "02-01-2025", soldOut: true, image: 'angular-logo.png', onSale: true },
@@ -18,5 +19,14 @@ export class CoursesList implements OnInit {
 
   ngOnInit(): void {
     console.log("CoursesList initialized")
+  }
+
+  onCourseBooked(course: any): void {
+    console.log('Parent heard about booking: ', course.title);
+  }
+
+  onWishlistAdded(course: any) {
+    console.log("Wishlist event triggered for:", course.title);
+    this.wishlist.push(course);
   }
 }

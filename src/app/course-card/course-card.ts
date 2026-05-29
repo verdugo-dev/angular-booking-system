@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 
 
@@ -11,9 +11,15 @@ import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 export class CourseCard {
 
   @Input() course: any;
+  @Output() courseBooked = new EventEmitter<any>();
+  @Output() wishlistAdded = new EventEmitter<any>();
 
-  viewDetails(course: string): void {
-    alert(`Viewing deatils for ${course}`)
+  onBookCourse(): void {
+    this.courseBooked.emit(this.course);
+  }
+
+  onAddToWishlist() {
+    this.wishlistAdded.emit(this.course);
   }
 
 }

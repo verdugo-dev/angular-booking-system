@@ -12,6 +12,7 @@ button {
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  margin: 5px;
 }
 
 button:hover {
@@ -27,4 +28,9 @@ button:hover {
   color: #fff;
   font-weight: bold;
   background-color: #007e24;
+}
+
+button:disabled {
+  background-color: #7f8389;
+  cursor: not-allowed;
 }
