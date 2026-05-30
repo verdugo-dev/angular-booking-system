@@ -1,0 +1,15 @@
+<h2>Course Detail</h2>
+
+<button (click)="loadCourseById(1)">Load course with ID 1</button>
+
+<hr>
+
+@if (course) {
+  <div>
+    <h3>{{course.title}}</h3>
+    <p>{{course.description}}</p>
+    <p>{{course.price | currency:'MXN'}}</p>
+    <p>{{course.date | date:'longDate'}}</p>
+    <img [src]="course.image" [alt]="course.title" width="100">
+  </div>
+}
